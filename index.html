@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Happy Mennn (AHM)</title>
+    <style>
+        @font-face {
+            font-family: 'myfont';
+            src: url('assess/MontserratUnderline-Light.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgb(23, 23, 32);
+        }
+
+        .header {
+            position: relative;
+            width: 100vw;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-title {
+            position: absolute;
+            top: 50%;
+            left: 2vw;
+            color: white;
+            font-size: 3em;
+            font-family: myfont;
+            transition: text-shadow 0.3s ease;
+        }
+
+        .header-title:hover {
+            text-shadow: 0 0 20px rgba(211, 39, 93, 0.8), 0 0 40px rgba(146, 103, 184, 0.6), 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .header-subtitle {
+            position: absolute;
+            top: calc(50% + 1.1em);
+            left: 2vw;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1em;
+            letter-spacing: 0.3em;
+        }
+
+        .tabs {
+            position: absolute;
+            bottom: 0;
+            left: 1vw;
+            display: flex;
+            justify-content: left;
+            background-color: rgba(0, 0, 0, 0);
+            width: 100%;
+        }
+
+        .tab-button {
+            padding: 14px 20px;
+            cursor: pointer;
+            background-color: inherit;
+            color: white;
+            border: none;
+            outline: none;
+            transition: background-color 0.3s ease;
+            font-size: 1.2em;
+        }
+
+        .tab-button:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            width: 100vw;
+            background-color: rgb(23, 23, 32);
+        }
+
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+            transition: all 0.3s ease;
+            z-index: 5;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            z-index: 5;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+            z-index: 5;
+        }
+
+        .grid-item:hover img {
+            filter: none;
+            z-index: 5;
+        }
+
+        .grid-item-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.5em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+            z-index: 10;
+            text-align: center;
+            padding: 0 1em;
+        }
+
+        .grid-item:hover .grid-item-title {
+            opacity: 1;
+        }
+
+        .text-title {
+            position: relative;
+            font-size: 1.5em;
+            top: 20px;
+            bottom: 20px;
+            left: 2vw;
+            color: rgb(146, 103, 184);
+        }
+
+        .text-content {
+            position: relative;
+            text-align: justify;
+            font-size: 1em;
+            top: 30px;
+            margin-left: 2vw;
+            margin-right: 2vw;
+            color: rgb(146, 103, 184);
+        }
+
+        .member-name {
+            color: rgb(211, 39, 93);
+            font-style: normal;
+        }
+
+        a {
+            color: rgb(211, 39, 93);
+            text-decoration: none;
+            z-index: 5;
+        }
+
+        a:hover {
+            background-color: lightyellow;
+            color: rgb(255, 0, 0);
+            z-index: 5;
+        }
+
+        a:active {
+            background-color: lightgreen;
+            color: darkgreen;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="assess/peeling.jpg" alt="A Happy Mennn (AHM) performing Peeling Cycle">
+        <h1 class="header-title">A Happy Mennn</h1>
+        <div class="header-subtitle">AHM</div>
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab('work')">Work</button>
+            <button class="tab-button" onclick="openTab('about')">About</button>
+            <button class="tab-button" onclick="openTab('contact')">Contact</button>
+        </div>
+    </div>
+
+    <div id="work" class="tab-content active">
+        <div class="grid-container">
+            <div class="grid-item">
+                <a href="pages/peeling-cycle.html">
+                    <img src="assess/peeling.jpg" alt="Peeling Cycle">
+                    <div class="grid-item-title">Peeling Cycle (2026)</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="tab-content" style="padding-bottom: 2em;">
+        <h2 class="text-title">About A Happy Mennn (AHM)</h2>
+        <p class="text-content">A Happy Mennn is an interdisciplinary multimedia artist trio and research group formed by <a href="https://anqiliu.com" target="_blank">Anqi Liu</a>, <a href="https://zhanghanpqqo.github.io/HanZhang/" target="_blank">Han Zhang</a>, and <a href="https://www.mingyongcheng.com/" target="_blank">Mingyong Cheng</a>. AHM's works address the lived experience of immigrant Asian women artists building career, practicing, and living in the West, via the use of technology, sound, and free improvisation performing arts.</p>
+        <p class="text-content"><span class="member-name">Anqi Liu</span> is a music composer, sound artist, interdisciplinary/multimedia artist, photographer, and filmmaker.</p>
+        <p class="text-content"><span class="member-name">Han Zhang</span> is a multimedia artist, computer musician, performer, and engineer.</p>
+        <p class="text-content"><span class="member-name">Mingyong Cheng</span> is a new/digital media artist, interdisciplinary visual artist, and creative technologist.</p>
+        <p class="text-content"><a href="pages/peeling-cycle.html">More on Peeling Cycle, AHM's current work &rarr;</a></p>
+    </div>
+
+    <div id="contact" class="tab-content" style="padding-bottom: 2em;">
+        <h2 class="text-title">Contact</h2>
+        <p class="text-content">Han Zhang: <a href="mailto:zhanghanpqqo@gmail.com">zhanghanpqqo@gmail.com</a></p>
+        <p class="text-content">Anqi Liu: <a href="https://anqiliu.com" target="_blank">anqiliu.com</a></p>
+        <p class="text-content">Mingyong Cheng: <a href="https://www.mingyongcheng.com/" target="_blank">mingyongcheng.com</a></p>
+    </div>
+
+    <script>
+        function openTab(tabId) {
+            var i, tabcontent;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            document.getElementById(tabId).style.display = "block";
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            openTab('work');
+        });
+    </script>
+</body>
+</html>
