@@ -188,7 +188,15 @@
 </head>
 <body>
     <div class="header">
-        <img src="assess/peeling.jpg" alt="A Happy Mennn (AHM) performing Peeling Cycle">
+        <img id="hero-photo" alt="A Happy Mennn (AHM) performing Peeling Cycle">
+        <script>
+            // Pick one of the header photos at random on each page load.
+            (function () {
+                var photos = ['assess/header-photo.jpg', 'assess/header-photo-2.jpg'];
+                var chosen = photos[Math.floor(Math.random() * photos.length)];
+                document.getElementById('hero-photo').src = chosen;
+            })();
+        </script>
         <h1 class="header-title">A Happy Mennn</h1>
         <div class="header-subtitle">AHM</div>
         <div class="tabs">
@@ -201,9 +209,15 @@
     <div id="work" class="tab-content active">
         <div class="grid-container">
             <div class="grid-item">
-                <a href="pages/peeling-cycle.html">
-                    <img src="assess/peeling.jpg" alt="Peeling Cycle">
-                    <div class="grid-item-title">Peeling Cycle (2026)</div>
+                <a href="pages/peeling-cycle-i.html">
+                    <img src="assess/peeling.jpg" alt="Peeling Cycle I">
+                    <div class="grid-item-title">Peeling Cycle I (2026)</div>
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="pages/peeling-cycle-ii.html">
+                    <img src="assess/peeling/peeling11.jpg" alt="Peeling Cycle II">
+                    <div class="grid-item-title">Peeling Cycle II (2026)</div>
                 </a>
             </div>
         </div>
@@ -215,7 +229,7 @@
         <p class="text-content"><span class="member-name">Anqi Liu</span> is a music composer, sound artist, interdisciplinary/multimedia artist, photographer, and filmmaker.</p>
         <p class="text-content"><span class="member-name">Han Zhang</span> is a multimedia artist, computer musician, performer, and engineer.</p>
         <p class="text-content"><span class="member-name">Mingyong Cheng</span> is a new/digital media artist, interdisciplinary visual artist, and creative technologist.</p>
-        <p class="text-content"><a href="pages/peeling-cycle.html">More on Peeling Cycle, AHM's current work &rarr;</a></p>
+        <p class="text-content">More on AHM's ongoing project: <a href="pages/peeling-cycle-i.html">Peeling Cycle I</a> (New York City premiere) and <a href="pages/peeling-cycle-ii.html">Peeling Cycle II</a> (San Diego iteration).</p>
     </div>
 
     <div id="contact" class="tab-content" style="padding-bottom: 2em;">
